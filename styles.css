@@ -19,21 +19,25 @@ body {
     border-radius: 3px;
 }
 
-.display-container {
+.display {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    gap: 10px;
     width: 429px;
     height: 100px;
     margin-top: 10px;
+    outline: 1px solid #fff;
+    box-shadow: 1px 1px 3px white;
 }
 
-#display {
-    font-size: 7rem;
+.display {
+    font-size: 35px;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     margin-top: 2rem;
-
+    overflow: hidden; /* stops display numbers from going out of display container */
+    white-space: none;
 }
 
 button {
@@ -55,7 +59,7 @@ button {
     background-color: black;
 }
 
-.buttons {
+.buttons-container {
     display: flex;
     flex-direction: column;
     gap: 10px;

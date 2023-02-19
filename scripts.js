@@ -1,49 +1,125 @@
-let num = 0;
+let total = ''
+let newTotal = []
+//how do I select all buttons and for every button clicked the text content of the buttons are displayed like: 786-498
+document.getElementById('zero').addEventListener('click', zero)
+document.getElementById('one').addEventListener('click', one)
+document.getElementById('two').addEventListener('click', two)
+document.getElementById('three').addEventListener('click', three)
+document.getElementById('four').addEventListener('click', four)
+document.getElementById('five').addEventListener('click', five)
+document.getElementById('six').addEventListener('click', six)
+document.getElementById('seven').addEventListener('click', seven)
+document.getElementById('eight').addEventListener('click', eight)
+document.getElementById('nine').addEventListener('click', nine)
 
-document.querySelector('#clear').addEventListener('click',)
-document.querySelector('#sign').addEventListener('click',)
-document.querySelector('#percent').addEventListener('click',)
-document.querySelector('#divide').addEventListener('click',)
-document.querySelector('#seven').addEventListener('click',)
-document.querySelector('#eight').addEventListener('click',)
-document.querySelector('#nine').addEventListener('click',)
-document.querySelector('#multiply').addEventListener('click',)
-document.querySelector('#four').addEventListener('click',)
-document.querySelector('#five').addEventListener('click',)
-document.querySelector('#six').addEventListener('click',)
-document.querySelector('#subtract').addEventListener('click',)
-document.querySelector('#one').addEventListener('click',)
-document.querySelector('#two').addEventListener('click',)
-document.querySelector('#three').addEventListener('click',)
-document.querySelector('#add').addEventListener('click',)
-document.querySelector('#zero').addEventListener('click',)
-document.querySelector('#decimal').addEventListener('click',)
-document.querySelector('#equal').addEventListener('click',)
-
-function clearAll() {
-    return num = 0;
+function zero() {
+  total += '0'
+  document.getElementById('current').innerText = total
 }
 
-function add(a, b) {
-    return a + b;
+function one() {
+  total += '1'
+  document.getElementById('current').innerText = total
 }
 
-function subtract(a, b) {
-    return a - b;
-}
-function multiply(a ,b) {
-    return a * b;
-}
-function divide(a, b) {
-    return a / b;
-}
-function percentage(a) {
-    return a / 100;
-}
-function solve(operator, a, b) {
-    if(operator == "+") {
-         add()
-    }
+function two() {
+  total += '2'
+  document.getElementById('current').innerText = total
 }
 
-document.querySelector('#display').innerHTML = solve //change display
+function three() {
+  total += '3'
+  document.getElementById('current').innerText = total
+}
+
+function four() {
+  total += '4'
+  document.getElementById('current').innerText = total
+}
+
+function five() {
+  total += '5'
+  document.getElementById('current').innerText = total
+}
+
+function six() {
+  total += '6'
+  document.getElementById('current').innerText = total
+}
+
+function seven() {
+  total += '7'
+  document.getElementById('current').innerText = total
+}
+
+function eight() {
+  total += '8'
+  document.getElementById('current').innerText = total
+}
+
+function nine() {
+  total += '9'
+  document.getElementById('current').innerText = total
+}
+
+
+document.getElementById('clear').addEventListener('click', clear)
+
+function clear() {
+  total = ''
+  document.getElementById('current').innerText = total
+}
+
+document.getElementById('divide').addEventListener('click', divide)
+
+function divide() {
+  total += ' / '
+  document.getElementById('current').innerText = total
+}
+
+document.getElementById('multiply').addEventListener('click', multiply)
+
+function multiply() {
+  total += ' * '
+  document.getElementById('current').innerText = total
+}
+
+document.getElementById('add').addEventListener('click', add)
+
+function add() {
+  total += ' + '
+  document.getElementById('current').innerText = total
+}
+
+document.getElementById('subtract').addEventListener('click', subtract)
+
+function subtract() {
+  total += ' - '
+  document.getElementById('current').innerText = total
+}
+
+document.getElementById('equal').addEventListener('click', solve)
+
+function solve() { //How do I turn the string in current display into maths
+  total = document.getElementById('current').textContent
+  console.log(total)
+  newTotal = total.split(' ')
+  console.log(newTotal) // how do i turn substrings into integers
+
+
+}
+
+function operate(a, operator, b) {
+  if(operator === '+') {
+    return a + b
+  }
+  else if(operator === '-') {
+    return a - b
+  }
+  else if(operator === '/') {
+    return a / b
+  }
+  else if(operator === '*') {
+    return a * b
+  }
+}
