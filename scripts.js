@@ -1,4 +1,5 @@
 let total = ''
+let newTotal = []
 //how do I select all buttons and for every button clicked the text content of the buttons are displayed like: 786-498
 document.getElementById('zero').addEventListener('click', zero)
 document.getElementById('one').addEventListener('click', one)
@@ -79,37 +80,37 @@ function clear() {
 document.getElementById('divide').addEventListener('click', divide)
 
 function divide() {
-  if(!(total.includes('+') || total.includes('-') || total.includes('/') || total.includes('*'))) {
+  // if(!(total.includes('+') || total.includes('-') || total.includes('/') || total.includes('*'))) {
   total += ' / '
   document.getElementById('current').innerText = total
 }
-}
+//}
 
 document.getElementById('multiply').addEventListener('click', multiply)
 
 function multiply() {
-  if(!(total.includes('+') || total.includes('-') || total.includes('/') || total.includes('*'))) {
+  // if(!(total.includes('+') || total.includes('-') || total.includes('/') || total.includes('*'))) {
   total += ' * '
   document.getElementById('current').innerText = total
-}
+//}
 }
 
 document.getElementById('add').addEventListener('click', add)
 
 function add() {
-  if(!(total.includes('+') || total.includes('-') || total.includes('/') || total.includes('*'))) {
-  total += ' + '
+  // if(!(total.includes('+') || total.includes('-') || total.includes('/') || total.includes('*'))) {
+   total += ' + '
   document.getElementById('current').innerText = total
-}
+//}
 }
 
 document.getElementById('subtract').addEventListener('click', subtract)
 
 function subtract() {
-  if(!(total.includes('+') || total.includes('-') || total.includes('/') || total.includes('*'))) {
+  // if(!(total.includes('+') || total.includes('-') || total.includes('/') || total.includes('*'))) {
   total += ' - '
   document.getElementById('current').innerText = total
-}
+//}
 }
 
 document.getElementById('equal').addEventListener('click', solve)
@@ -133,6 +134,9 @@ document.getElementById('sign').addEventListener('click', sign)
 
 function sign() {
   //if clicked after an operation button it turns display into NaN
+  newTotal = total.split(' ')
+  //how do i target specific integers in the display
+
   total *= -1
   document.getElementById('current').innerText = total
   }
